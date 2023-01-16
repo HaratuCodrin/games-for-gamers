@@ -5,7 +5,7 @@ from src.GameStateManager import GameStateManager as GSM
 if __name__ == "__main__":
     pygame.init()
     clock = pygame.time.Clock()
-    window = pygame.display.set_mode((800, 600))
+    window = pygame.display.set_mode((700, 600))
     pygame.display.set_caption('4 in a Row')
     gsm = GSM("MENU", pygame, window)
     running = True
@@ -18,6 +18,9 @@ if __name__ == "__main__":
                 gsm.clicked = False
             if event.type == pygame.MOUSEBUTTONDOWN:
                 gsm.clicked = True
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_ESCAPE:
+                    gsm.main_menu = True
         gsm.update()
         gsm.draw()
         pygame.display.update()

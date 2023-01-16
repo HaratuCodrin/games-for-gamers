@@ -5,6 +5,7 @@ class GameStateManager:
 
     clicked = False
     exit = False 
+    main_menu = False
 
     def __init__(self, state, game, window):
         self.game = game

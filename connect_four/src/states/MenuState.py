@@ -23,6 +23,7 @@ class MenuState(GameState):
 
     def draw(self):
         super().draw()
+        self.input()
         self.main_surface.fill((21, 88, 67))
         for piece in self.pieces:
             piece.draw()
